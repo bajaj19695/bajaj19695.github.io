@@ -73,7 +73,7 @@ export default function Hero() {
           <Reveal className="lg:pl-4">
             <div className="mx-auto max-w-md lg:max-w-none">
               <HeroArt />
-              <p className="mt-4 text-center text-sm text-muted lg:text-left">{heroArt.caption}</p>
+              <p className="mt-4 text-center text-sm text-muted">{heroArt.caption}</p>
             </div>
           </Reveal>
         </div>
