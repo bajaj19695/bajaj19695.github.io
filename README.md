@@ -58,8 +58,9 @@ open that file to see the available names.
 
 ### Two things to add myself
 
-1. **Resume** — a public copy (no phone number) belongs at `public/resume.pdf`. Until it's there,
-   the Resume buttons 404.
+1. **Resume** — a public copy (no phone number) belongs in `public/` as
+   `Deepanshu_Bajaj_CV.pdf`. `profile.resume` in `src/data.js` points to that exact name —
+   keep the two in sync if the filename ever changes.
 2. **Photo (optional)** — drop an image in `public/` and set `profile.photo = './photo.jpg'`.
    Left as `''`, the circular photo slot stays hidden.
 

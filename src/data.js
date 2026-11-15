@@ -20,8 +20,8 @@ export const profile = {
   email: 'bajaj19695@gmail.com',
   linkedin: 'https://www.linkedin.com/in/deepanshu-bajaj-294086a8/',
   github: 'https://github.com/bajaj19695',
-  // Drop a public copy of your CV (no phone number) in /public as resume.pdf
-  resume: './resume.pdf',
+  // Public copy of the CV (no phone number), served from /public.
+  resume: './Deepanshu_Bajaj_CV.pdf',
   // OPTIONAL circular photo. Put the image in /public and set e.g. './photo.jpg'.
   // Leave as an empty string to hide the photo slot entirely.
   photo: '',
