@@ -1,6 +1,7 @@
 import { nav, profile } from '../data.js'
 import { Container } from './layout.jsx'
 import { Icon } from './icons.jsx'
+import ThemeToggle from './ThemeToggle.jsx'
 
 export default function Nav() {
   const compact = nav.filter((n) => n.compact)
@@ -50,15 +51,18 @@ export default function Nav() {
             </ul>
           </nav>
 
-          <a
-            href={profile.resume}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark sm:px-4"
-          >
-            <Icon name="download" className="h-4 w-4" />
-            Resume
-          </a>
+          <div className="flex shrink-0 items-center gap-3">
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark sm:px-4"
+            >
+              <Icon name="download" className="h-4 w-4" />
+              Resume
+            </a>
+            <ThemeToggle />
+          </div>
         </div>
       </Container>
     </header>

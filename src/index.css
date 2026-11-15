@@ -25,6 +25,26 @@
   --color-brand-ring: #c7d2fe;
 }
 
+/* Dark theme — same token names, re-pointed. Toggled via a `dark` class
+   on <html> (see ThemeToggle.jsx); everything using the tokens above
+   just follows along. */
+.dark {
+  --color-canvas: #0b1220;
+  --color-card: #141c2f;
+
+  --color-ink: #f1f5f9;
+  --color-body: #cbd5e1;
+  --color-muted: #94a3b8;
+
+  --color-line: #27324a;
+  --color-line-soft: #1b2437;
+
+  --color-brand: #818cf8;
+  --color-brand-dark: #a5b4fc;
+  --color-brand-soft: #1b2142;
+  --color-brand-ring: #3b3f8f;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -37,6 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Belt and braces against horizontal scroll at 360px. */
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {

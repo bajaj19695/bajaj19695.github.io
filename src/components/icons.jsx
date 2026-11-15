@@ -151,6 +151,13 @@ const STROKE = {
       <path d="M12 7v5.5l3.5 2" />
     </>
   ),
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4.5" />
+      <path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8l1.8-1.8M18 6l1.8-1.8" />
+    </>
+  ),
+  moon: <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11Z" />,
 }
 
 // Brand marks are solid shapes rather than strokes.

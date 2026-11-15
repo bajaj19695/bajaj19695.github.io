@@ -11,7 +11,17 @@
       content="Senior Software Developer in Delhi, India with 5+ years building React Native apps for Android and iOS with BLE, NFC and IoT device integration, plus full-stack work in React 19 and Nest.js."
     />
     <meta name="author" content="Deepanshu Bajaj" />
-    <meta name="theme-color" content="#fafafa" />
+    <meta name="theme-color" content="#0b1220" />
+
+    <!-- Dark is the default theme; set it before first paint so there's no
+         flash of the wrong one. A stored preference (from the toggle) wins. -->
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark' : true;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script>
 
     <!-- Open Graph / social previews -->
     <meta property="og:type" content="website" />
