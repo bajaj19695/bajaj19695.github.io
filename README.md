@@ -1,12 +1,42 @@
 # Deepanshu Bajaj — Portfolio
 
-Single-page developer portfolio. React 19 + Vite + Tailwind CSS v4, no other UI libraries.
-Clean light theme, inline-SVG illustrations, no runtime dependencies beyond React.
+My developer portfolio. A single-page site built with React 19 + Vite + Tailwind CSS v4 (no
+other UI libraries) that walks through who I am, what I've shipped, and how I like to work.
+
+## About me
+
+Senior Software Developer based in Delhi, India. 5+ years building React Native apps for
+Android and iOS, with a focus on code that talks to real hardware — BLE, NFC, DFU firmware
+upgrades, camera and geolocation integrations. Full-stack on the web side too, with React 19
+and Nest.js APIs behind the mobile clients. I mentor developers and work directly with clients
+rather than through a layer of management. Currently looking for senior React Native / full-stack
+roles, especially ones where mobile meets hardware.
+
+## What's on the site
+
+- **Hero** — name, pitch and an inline-SVG illustration of a phone's BLE device list wired up to
+  an IoT unit and an API, which is the shape of most of my work.
+- **Stats** — 5+ years in production, 50+ store releases on one app, a 40% app-size cut
+  (100 → 60 MB), 10+ developers trained.
+- **Projects** — four case studies: **PCX (PortaConX)**, a portable-sanitation IoT platform where
+  I own the BLE telemetry pipeline and the API contract across Nest.js/React/React Native;
+  **CoolR Mobile**, a long-running retail field app with a BLE command protocol for smart camera
+  devices and DFU firmware upgrades; **Steris IMS Ready Tracker**, a ~130-screen legacy React app
+  modernised to React 19 + Vite + MUI v7; and **Tailored Logistics**, a logistics platform and
+  driver app with Gemini-assisted dispatch. No confidential details, screenshots or endpoints —
+  happy to go deeper in an interview.
+- **Architecture diagram** — the pattern underneath most of my projects: Device (BLE/NFC) →
+  React Native app → Nest.js API → Database → React web dashboard.
+- **Skills** — grouped by Mobile, IoT & Devices, Web, Backend, Release & Practice, and AI tooling.
+- **Public projects** — [Bluetooth-Manager](https://github.com/bajaj19695/Bluetooth-Manager) and
+  the in-progress `ble-telemetry-hub`.
+- **Leadership** — code review, mentoring, and working directly with clients.
+- **Contact** — email only; no phone number is published anywhere on the site.
 
 ## Editing content
 
-**All text lives in [`src/data.js`](src/data.js).** You never need to open a component to change
-wording, add a project, or reorder sections.
+**All text lives in [`src/data.js`](src/data.js).** Components never need to change when the
+wording, projects, or section order do.
 
 | What | Where in `src/data.js` |
 | --- | --- |
@@ -26,47 +56,30 @@ wording, add a project, or reorder sections.
 The `icon` fields must match a key in [`src/components/icons.jsx`](src/components/icons.jsx) —
 open that file to see the available names.
 
-### Two things to add yourself
+### Two things to add myself
 
-1. **Resume** — drop a public copy (no phone number) at `public/resume.pdf`. Until you do,
-   the Resume buttons will 404.
-2. **Photo (optional)** — put an image in `public/` and set `profile.photo = './photo.jpg'`.
-   Leave it as `''` and the circular photo slot stays hidden.
+1. **Resume** — a public copy (no phone number) belongs at `public/resume.pdf`. Until it's there,
+   the Resume buttons 404.
+2. **Photo (optional)** — drop an image in `public/` and set `profile.photo = './photo.jpg'`.
+   Left as `''`, the circular photo slot stays hidden.
 
 ### ANONYMIZE
 
-Set `ANONYMIZE = true` at the top of `src/data.js` if an NDA stops you naming clients. Project
-titles switch to the neutral `generic` description and the subtitle switches to the `kind` label.
-Nothing else needs to change.
+Set `ANONYMIZE = true` at the top of `src/data.js` if a client's NDA requires it. Project titles
+switch to the neutral `generic` description and the subtitle switches to the `kind` label —
+nothing else changes.
 
-## Run locally
+## Stack and constraints
 
-```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # static output in dist/
-npm run preview  # serve the built site
-npm run lint
-```
-
-## Deploying
-
-`vite.config.js` sets `base: './'`, so the build uses relative paths and works unchanged on all
-three hosts below.
-
-**GitHub Pages** — push to `main`, then set *Settings → Pages → Source* to **GitHub Actions**.
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and publishes on every push.
-The site goes live at `https://bajaj19695.github.io`.
-
-**Vercel / Netlify** — import the repo. Build command `npm run build`, output directory `dist`.
-
-## Notes
-
+- React 19, Vite, Tailwind CSS v4 — no other UI or component libraries.
+- Light theme: off-white canvas, white cards, one indigo accent, dark slate text.
 - Responsive from 360 px to 1440 px with no horizontal scroll. The architecture diagram renders
   left-to-right on tablets and up, stacked on phones.
-- Fade-in on scroll is pure CSS (`animation-timeline: view()`). Browsers without support, and
-  anyone with `prefers-reduced-motion`, get the finished state immediately — no flash of hidden
-  content, no JavaScript.
+- Fade-in on scroll is pure CSS (`animation-timeline: view()`), with `prefers-reduced-motion`
+  respected and no JavaScript involved.
 - Semantic landmarks, a skip link, alt text, visible focus rings, and AA contrast throughout.
+- Deploys as-is to GitHub Pages, Vercel or Netlify (`vite.config.js` uses `base: './'`);
+  [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes to GitHub Pages on
+  every push to `main`.
 - For richer social previews, add a 1200×630 `public/og-image.png` and uncomment the `og:image`
   tags in [`index.html`](index.html).
