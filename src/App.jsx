@@ -8,6 +8,7 @@ import OpenSource from './components/OpenSource.jsx'
 import Leadership from './components/Leadership.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import FloatingContact from './components/FloatingContact.jsx'
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FloatingContact />
     </>
   )
 }

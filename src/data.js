@@ -18,6 +18,10 @@ export const profile = {
     'I build React Native apps that talk to real hardware over BLE, NFC and cameras — and the React and Nest.js systems behind them.',
   location: 'Delhi, India',
   email: 'bajaj19695@gmail.com',
+  // WhatsApp number in international format, digits only, no "+" or spaces
+  // (e.g. '919999999999'). Leave empty to hide the WhatsApp button/icon
+  // everywhere on the site until a real number is added here.
+  whatsappNumber: '',
   linkedin: 'https://www.linkedin.com/in/deepanshu-bajaj-294086a8/',
   github: 'https://github.com/bajaj19695',
   // Public copy of the CV (no phone number), served from /public.
@@ -26,8 +30,8 @@ export const profile = {
   // Leave as an empty string to hide the photo slot entirely.
   photo: '',
   photoAlt: 'Deepanshu Bajaj',
-  // Small line shown above the name.
-  availability: 'Open to senior roles',
+  // Small line shown above the name. Leave empty to hide the badge.
+  availability: '',
 }
 
 // Sticky top-nav links. `compact: true` items also show on small screens.
@@ -40,9 +44,15 @@ export const nav = [
   { label: 'Contact', href: '#contact', compact: true },
 ]
 
+// Full wa.me link, or null while profile.whatsappNumber is empty.
+export const whatsappHref = profile.whatsappNumber ? `https://wa.me/${profile.whatsappNumber}` : null
+
 // Hero buttons. variant: 'primary' | 'secondary'
 export const heroActions = [
   { label: 'Contact me', href: `mailto:${profile.email}`, icon: 'mail', variant: 'primary' },
+  ...(whatsappHref
+    ? [{ label: 'WhatsApp', href: whatsappHref, icon: 'whatsapp', variant: 'secondary', external: true }]
+    : []),
   { label: 'LinkedIn', href: profile.linkedin, icon: 'linkedin', variant: 'secondary', external: true },
   { label: 'GitHub', href: profile.github, icon: 'github', variant: 'secondary', external: true },
   { label: 'Resume', href: profile.resume, icon: 'download', variant: 'secondary', external: true },
@@ -65,14 +75,14 @@ export const heroArt = {
 export const stats = [
   { value: '5+', label: 'years in production', icon: 'calendar' },
   { value: '50+', label: 'store releases (one app)', icon: 'rocket' },
-  { value: '40%', label: 'app size cut (100 → 60 MB)', icon: 'trendingDown' },
+  { value: '4', label: 'production projects (IoT, mobile, web, full-stack)', icon: 'layers' },
   { value: '10+', label: 'developers trained', icon: 'users' },
 ]
 
 // Headings and intro copy for each section.
 export const sections = {
   projects: {
-    title: 'Selected work',
+    title: 'Professional work',
     kicker: 'Case studies',
     intro:
       'Client and employer code is private, so these are short case studies focused on what I built and the decisions behind it. Happy to walk through the detail in an interview.',
@@ -238,6 +248,9 @@ export const leadership = [
   { text: 'Trained and led 10+ junior developers in React Native and C# over five years.', icon: 'users' },
   { text: 'Work directly with domestic and international clients on requirements and status.', icon: 'globe' },
   { text: 'Sole mobile engineer when needed; also lead in teams of up to three.', icon: 'briefcase' },
+  { text: 'Led a ~130-screen legacy React app through a full React 19 + Vite modernisation, from design docs to delivery.', icon: 'layers' },
+  { text: 'Own the API contract and data model shared across the mobile app, web dashboard and backend on active projects.', icon: 'server' },
+  { text: 'Mentor new hires to shipping production code within weeks, not months.', icon: 'zap' },
 ]
 
 export const contact = {
