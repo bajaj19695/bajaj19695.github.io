@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: ui-monospace, "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Consolas, monospace;
+  --color-bg: #0b0f0c;
+  --color-panel: #111713;
+  --color-line: #1f2a22;
+  --color-fg: #d7e3da;
+  --color-dim: #7d8f82;
+  --color-accent: #4ade80;
+  --color-amber: #fbbf24;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-bg text-fg font-mono antialiased; }
+::selection { background: #4ade8040; }
+.cursor::after { content: "▋"; @apply text-accent ml-1; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cursor::after { animation: none; } }
